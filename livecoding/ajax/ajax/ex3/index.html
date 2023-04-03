@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="button" onclick="getUsers()">Show users</button>
+    <h1>Users</h1>
+    <div id="users"></div>
+
+    <script>
+        function getUsers() {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                if (this.status == 200) {
+                    let users = JSON.parse(this.responseText) // convert from a string to an object 
+                    console.log(users);
+                    document.getElementById("users").innerHTML =
+                        this.responseText;
+                }
+            };
+            xhttp.open("GET", "users.json", true);
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>

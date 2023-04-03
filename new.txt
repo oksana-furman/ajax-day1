@@ -1,0 +1,5 @@
+<div id="content" class="m-3 text-center text-danger">
+        <h2>The XMLHttpRequest Object</h2>
+    </div>
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia possimus voluptatibus ipsam, non, in distinctio pariatur at quam placeat laboriosam repellendus sint officiis voluptatum tenetur hic nesciunt explicabo cumque iure obcaecati. Debitis, impedit quod inventore ratione laudantium fugit provident ipsam blanditiis eaque eum, nesciunt excepturi voluptatibus ea minima reprehenderit itaque.
+

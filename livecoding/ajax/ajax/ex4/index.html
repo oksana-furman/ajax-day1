@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Books</h1>
+    <div id="content"></div>
+
+    <script>
+        function loadDoc() {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                if (this.status == 200) {
+
+                    let content = document.getElementById("content");
+                    let book = this.responseXML.getElementsByTagName('book');
+                    console.log(book);
+                    for (let i = 0; i < book.length; i++) {
+                        content.innerHTML += `
+<h2>Title of the book is: ${book[i].getElementsByTagName('title')[0].childNodes[0].nodeValue} </h2>
+`;
+                    }
+                    // document.getElementById("content").innerHTML =
+                    //     this.responseXML.getElementsByTagName('library')[0].getElementsByTagName('book')[1].getElementsByTagName('title')[0].childNodes[0].nodeValue;
+
+                    console.log(this.responseXML.querySelector('library').getElementsByTagName('book')[1].getElementsByTagName('title')[0].childNodes[0].nodeValue);
+                }
+            };
+            xhttp.open("GET", "data.xml", true);
+            xhttp.send();
+        }
+        loadDoc();
+    </script>
+</body>
+
+</html>
